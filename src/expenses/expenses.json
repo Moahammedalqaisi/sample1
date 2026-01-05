@@ -1,0 +1,38 @@
+{
+  "expenses": [
+    {
+      "title": "Office Supplies",
+      "date": "2024-01-15",
+      "amount": 150.5,
+      "taxPercentage": 15.0,
+      "notes": "Monthly stationery purchase"
+    },
+    {
+      "title": "Client Lunch Meeting",
+      "date": "2024-01-16",
+      "amount": 85.0,
+      "taxPercentage": 10.0,
+      "notes": "Meeting with ABC Corp"
+    },
+    {
+      "title": "Software License",
+      "date": "2024-01-20",
+      "amount": 299.99,
+      "taxPercentage": 20.0,
+      "notes": "Annual subscription renewal"
+    },
+    {
+      "title": "Travel Expense",
+      "date": "2024-01-22",
+      "amount": 450.0,
+      "taxPercentage": 5.0
+    },
+    {
+      "title": "Marketing Materials",
+      "date": "2024-01-25",
+      "amount": 320.75,
+      "taxPercentage": 15.0,
+      "notes": "Brochures and flyers"
+    }
+  ]
+}
