@@ -1,5 +1,6 @@
 import { DataSource } from 'typeorm';
 import { Expense } from '../expenses/expense.entity';
+import { User } from '../users/user.entity';
 export const AppDataSource = new DataSource({
   type: 'mysql',
   host: 'localhost',
@@ -7,8 +8,8 @@ export const AppDataSource = new DataSource({
   username: 'user1',
   password: 'P@ssw0rd100',
   database: 'nodejssamples',
-  entities: [Expense], // List all your entities here (like EF's DbSet<T>)
+  entities: [Expense, User],
   migrations: ['src/migrations/*.ts'], // Path to your migrations folder
   synchronize: false, // Keep false for migrations
-  logging: false, // Enables SQL logging for debugging (remove in prod)
+  logging: true, // Enables SQL logging for debugging (remove in prod)
 });
