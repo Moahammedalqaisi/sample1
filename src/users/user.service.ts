@@ -28,9 +28,13 @@ export class UserService implements IUserService {
     if (isFound) throw new BadRequestException('Email already exists');
 
     // Hash the password before saving
-    if (user.password) {
-      user.password = await bcrypt.hash(user.password, this.saltRounds);
-    }
+    // if (user.password) {
+    //   const salt = await bcrypt.genSalt(this.saltRounds);
+    //   const hash = await bcrypt.hash(user.password, salt);
+
+    //   //user.password = await bcrypt.hash(user.password, this.saltRounds);
+    //   user.password = hash;
+    // }
     return this.userRepository.create(user);
   }
 
