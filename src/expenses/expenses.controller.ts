@@ -15,12 +15,12 @@ import { CreateExpenseDto } from './dto/create-expense.dto';
 import { UpdateExpenseDto } from './dto/update-expense.dto';
 import { ExpenseDto } from './dto/expense.dto';
 import { PagedResultDto } from 'src/fwk/page.result';
-import * as expensesService from './expenses.service';
+import { IExpenseService } from './expenses.service.interface';
 @Controller('expenses')
 export class ExpenseController {
   constructor(
     @Inject('IExpenseService')
-    private readonly expenseService: expensesService.IExpenseService,
+    private readonly expenseService: IExpenseService,
   ) {}
 
   @Get()

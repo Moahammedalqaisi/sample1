@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Expense } from './expense.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { IExpenseRepository } from './expense.repository.interface';
 
 @Injectable()
 export class ExpenseRepository implements IExpenseRepository {
@@ -32,12 +33,4 @@ export class ExpenseRepository implements IExpenseRepository {
   async delete(id: string): Promise<void> {
     await this.repo.delete(id);
   }
-}
-
-export interface IExpenseRepository {
-  findAll(skip: number, take: number): Promise<[Expense[], number]>;
-  findById(id: string): Promise<Expense | null>;
-  create(expense: Partial<Expense>): Promise<Expense>;
-  update(id: string, expense: Partial<Expense>): Promise<Expense | null>;
-  delete(id: string): Promise<void>;
 }
