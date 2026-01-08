@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Claim } from '../claims/claim.entity';
 
 @Entity()
 export class Expense {
@@ -19,4 +20,10 @@ export class Expense {
 
   @Column({ type: 'text', nullable: true })
   notes?: string;
+
+  @ManyToOne(() => Claim, (claim) => claim.expenses, { nullable: true })
+  claim?: Claim;
+
+  @Column({ nullable: true })
+  claimId?: string;
 }
